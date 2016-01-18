@@ -1,6 +1,6 @@
 _ = require('underscore')
 RoutineDao = require('../data/RoutineDao')
-Parsers = require('./Parsers')
+Parsers = require('../util/Parsers')
 
 register = (server, basePath, dbRunner) ->
   dao = new RoutineDao(dbRunner)
