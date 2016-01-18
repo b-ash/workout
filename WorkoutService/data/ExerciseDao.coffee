@@ -2,8 +2,7 @@ Dao = require('./Dao')
 
 class ExerciseDao extends Dao
   table: '`exercise`'
-  fields: ['`id`', '`name`', '`description`', '`created`']
-  selectSQL: 'SELECT `id`, `name`, `description`, `created` FROM `exercise`'
+  fields: ['`id`', '`name`', '`description`', '`creator`', '`created`']
 
   list: (callback) =>
     super(callback, {orderBy: "`name` ASC"})

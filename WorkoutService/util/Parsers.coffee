@@ -1,9 +1,13 @@
-exercise = (e) ->
-  {
-    exercise: e.exercise
-    position: e.position
-    description: e.description or ''
-    type: e.type
-  }
+_ = require('underscore')
 
-module.exports = {exercise}
+exercise = (e) ->
+  clone = _.clone(e)
+  clone.description ?= ''
+  clone
+
+set = (s) ->
+  clone = _.clone(s)
+  clone.notes ?= ''
+  clone
+
+module.exports = {exercise, set}

@@ -1,17 +1,16 @@
 _ = require('underscore')
 SetDao = require('../data/SetDao')
+Parsers = require('../util/Parsers')
 
 register = (server, basePath, dbRunner) ->
   dao = new SetDao(dbRunner)
-  path = "#{basePath}/sets"
+  path = "#{basePath}/sets/users/:userId/routines/:routineId"
 
   server.get path, (req, res) ->
-    dao.list _.bind(res.json, res)
-
-  server.post path, (req, res) ->
-    dao.create(req.body, _.bind(res.json, res))
-
-  server.put "#{path}/:id", (req, res) ->
-    dao.update(req.params.id, req.body, _.bind(res.json, res))
+    dao.list req.params.userId, req.params.routineId, (data) ->
+      output = {}
+      for date, sets of data
+        output[date] = (Parsers.set(s) for s in sets)
+      res.json(output)
 
 module.exports = {register}

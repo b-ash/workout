@@ -18,7 +18,7 @@ executeQuery = (query, params=[], callback, singleResult=false) ->
       connection.release()
 
       if err
-        console.log "Error running query `#{query}`"
+        console.log "Error running query \"#{query}\""
         throw err
 
       if singleResult

@@ -157,3 +157,58 @@ INSERT INTO `routineExercise` (`routineId`, `exerciseId`, `position`) VALUES (1,
 INSERT INTO `routineExercise` (`routineId`, `exerciseId`, `position`) VALUES (1, 6, 22);
 INSERT INTO `routineExercise` (`routineId`, `exerciseId`, `position`) VALUES (1, 32, 23);
 INSERT INTO `routineExercise` (`routineId`, `exerciseId`, `position`) VALUES (1, 7, 24);
+
+# Sets
+# Round 1
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 1,  1,  20, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 18, 2,  10, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 2,  3,  20, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 17, 4,  10, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 5,  5,  20, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 15, 6,  10, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 11, 7,  15, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 31, 8,  10, 30, 20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 6,  9,  15, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 28, 10, 12, 35, 20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 7,  11, 15, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 32, 12, 16, 15, 20160111);
+# Round 2
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 18, 13, 10, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 1,  14, 20, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 17, 15, 10, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 2,  16, 20, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 15, 17, 10, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 5,  18, 20, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 31, 19, 15, 30, 20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 11, 20, 15, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 28, 21, 12, 35, 20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 6,  22, 15, 0,  20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 32, 23, 16, 20, 20160111);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 7,  24, 15, 0,  20160111);
+
+# Round 1
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 1,  1,  10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 18, 2,  5,  0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 2,  3,  10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 17, 4,  5,  0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 5,  5,  10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 15, 6,  5,  0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 11, 7,  10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 31, 8,  8,  30, 20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 6,  9,  10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 28, 10, 12, 30, 20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 7,  11, 10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 32, 12, 16, 10, 20160104);
+# Round 2
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 18, 13, 5,  0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 1,  14, 10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 17, 15, 5,  0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 2,  16, 10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 15, 17, 5,  0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 5,  18, 10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 31, 19, 10, 30, 20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 11, 20, 10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 28, 21, 10, 30, 20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 6,  22, 10, 0,  20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 32, 23, 16, 15, 20160104);
+INSERT INTO `set` (`userId`, `routineId`, `exerciseId`, `position`, `reps`, `weight`, `dateInt`) VALUES (1, 1, 7,  24, 10, 0,  20160104);
