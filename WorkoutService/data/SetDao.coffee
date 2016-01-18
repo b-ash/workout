@@ -15,14 +15,6 @@ class SetDao extends Dao
   ]
 
   list: (userId, routineId, callback) =>
-    parse = (data) ->
-      outputByDate = {}
-      for set in data
-        outputByDate[set.dateInt] ?= []
-        outputByDate[set.dateInt].push(set)
-      callback(outputByDate)
-
-
     sql = """
       SELECT u.name AS user,
              r.name AS routine,
@@ -43,6 +35,7 @@ class SetDao extends Dao
       ORDER BY `dateInt` DESC, `position` ASC
     """
 
-    @runner(sql, [userId, routineId], parse)
+    @runner(sql, [userId, routineId], callback)
+
 
 module.exports = SetDao

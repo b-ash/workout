@@ -8,9 +8,6 @@ register = (server, basePath, dbRunner) ->
 
   server.get path, (req, res) ->
     dao.list req.params.userId, req.params.routineId, (data) ->
-      output = {}
-      for date, sets of data
-        output[date] = (Parsers.set(s) for s in sets)
-      res.json(output)
+      res.json(Parsers.setsByDay(data))
 
 module.exports = {register}
