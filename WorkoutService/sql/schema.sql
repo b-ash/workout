@@ -53,5 +53,5 @@ CREATE TABLE IF NOT EXISTS `set` (
   FOREIGN KEY (`userId`) REFERENCES `user`(`id`),
   FOREIGN KEY (`routineId`) REFERENCES `routine`(`id`),
   FOREIGN KEY (`exerciseId`) REFERENCES `exercise`(`id`),
-  INDEX(`userId`, `exerciseId`, `routineId`)
+  INDEX(`userId`, `routineId`, `exerciseId`)
 );
