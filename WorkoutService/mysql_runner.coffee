@@ -2,8 +2,8 @@ mysql = require('mysql')
 
 pool = mysql.createPool
   host: process.env.WORKOUT_HOST or 'localhost'
-  user: process.env.WORKOUT_HOST or 'root'
-  password: process.env.WORKOUT_HOST or ''
+  user: process.env.WORKOUT_USER or 'root'
+  password: process.env.WORKOUT_PASS or ''
   database: 'Workout'
   connectionLimit: 10
 
