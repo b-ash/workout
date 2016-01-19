@@ -4,10 +4,13 @@ Parsers = require('../util/Parsers')
 
 register = (server, basePath, dbRunner) ->
   dao = new SetDao(dbRunner)
-  path = "#{basePath}/sets/users/:userId/routines/:routineId"
+  path = "#{basePath}/sets"
 
-  server.get path, (req, res) ->
+  server.get "#{path}/users/:userId/routines/:routineId", (req, res) ->
     dao.list req.params.userId, req.params.routineId, (data) ->
       res.json(Parsers.setsByDay(data))
+
+  server.post path, (req, res) ->
+    dao.create req.body, _.bind(res.json, res)
 
 module.exports = {register}
