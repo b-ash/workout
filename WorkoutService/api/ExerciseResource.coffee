@@ -8,6 +8,9 @@ register = (server, basePath, dbRunner) ->
   server.get path, (req, res) ->
     dao.list _.bind(res.json, res)
 
+  server.get "#{path}/type/:type", (req, res) ->
+    dao.list _.bind(res.json, res), {type: req.params.type}
+
   server.post path, (req, res) ->
     dao.create(req.body, _.bind(res.json, res))
 
