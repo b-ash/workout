@@ -2,8 +2,8 @@ User = require 'models/users/User'
 Utils = require 'lib/Utils'
 
 
-Application =
-  initialize: (onSuccess) ->
+class Application
+  initialize: =>
     # Don't requre router until the app module is defined
     Router = require 'lib/Router'
 
@@ -13,13 +13,15 @@ Application =
 
     if @user.isConfigured()
       Utils.formatTheme @user
+      @user.verifyLogin().always(@start)
+    else
+      @start()
 
+  start: =>
     if not @user.isConfigured() and window.location.pathname isnt '/configure'
       window.location.href = '/configure'
     else
       Backbone.history.start
         pushState: true
-      onSuccess()
 
-
-module.exports = Application
+module.exports = new Application

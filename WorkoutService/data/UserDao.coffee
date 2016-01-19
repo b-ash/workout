@@ -13,7 +13,7 @@ class UserDao extends Dao
     @runner("INSERT INTO #{@table} SET `name` = ?, `code` = ?", [obj.name, obj.code], callback)
 
   verify: ({name, code}, callback) ->
-    @runner("SELECT #{@fields.join(', ')} FROM #{@table} WHERE name = ? AND code = ?", [name, code], ((user) ->
+    @runner("SELECT `name`, `code` FROM #{@table} WHERE name = ? AND code = ?", [name, code], ((user) ->
       callback(user)
     ), true)
 

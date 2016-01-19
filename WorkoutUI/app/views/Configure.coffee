@@ -50,7 +50,7 @@ class ConfigureView extends View
       configured: true
 
     if existingUser
-      promise = @attemptLogin(config.name, config.code)
+      promise = @user.verifyLogin(config.name, config.code)
     else
       promise = @createUser(config.name, config.code)
 
@@ -58,11 +58,6 @@ class ConfigureView extends View
       @user.save(config)
       app.router.navigate('', true)
     ).fail(@onLoginError)
-
-  attemptLogin: (name, code) ->
-    $.ajax '/api/users/verify',
-      type: 'POST'
-      data: {name, code}
 
   createUser: (name, code) ->
     $.ajax '/api/users',
