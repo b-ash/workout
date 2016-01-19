@@ -19,16 +19,21 @@ class RoutineDao extends Dao
 
   exercises: (id, callback) ->
     @runner """
-      SELECT r.name AS routine,
-             e.name AS exercise,
+      SELECT r.id AS routineId,
+             r.description AS routineDescription,
+             r.name AS routineName,
+             r.created AS routineCreated,
+             u.name AS routineCreator,
+             e.name AS name,
              e.description AS description,
              re.position AS position,
              et.name AS type
-      FROM `routine` r, `exercise` e, `routineExercise` re, `exerciseType` et
+      FROM `routine` r, `exercise` e, `routineExercise` re, `exerciseType` et, `user` u
       WHERE r.id = ? AND
             r.id = re.routineId AND
             e.id = re.exerciseId AND
-            e.type = et.id
+            e.type = et.id AND
+            r.creator = u.id
       ORDER BY re.position ASC
     """, [id], callback
 

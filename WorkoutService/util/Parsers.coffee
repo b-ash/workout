@@ -1,9 +1,22 @@
 _ = require('underscore')
 
 exercise = (e) ->
-  clone = _.clone(e)
+  clone = _.pick(e, 'id', 'description', 'name', 'position', 'type')
   clone.description ?= ''
   clone
+
+routineExercises = (data) ->
+  if data.length is 0
+    return data
+
+  {routineId, routineName, routineDescription, routineCreated, routineCreator} = _.first(data)
+
+  routine: routineName
+  id: routineId
+  created: routineCreated
+  creator: routineCreator
+  description: routineDescription or ''
+  exercises: (exercise(e) for e in data)
 
 set = (s) ->
   clone = _.pick(s, 'exercise', 'exerciseType', 'notes', 'position', 'reps', 'weight')
@@ -33,4 +46,4 @@ setsByDay = (data) ->
 
   return output
 
-module.exports = {exercise, set, setsByDay}
+module.exports = {routineExercises, setsByDay}
