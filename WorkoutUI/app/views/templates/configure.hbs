@@ -1,0 +1,29 @@
+<header>
+  <h4>Configure your profile</h4>
+</header>
+
+<div id="validation_error_msg" class="alert error" style="display: none;">Whoa there cowpoke, fill in the blanks.</div>
+<div id="login_error_msg" class="alert error" style="display: none;">There was an error. Try saving again.</div>
+
+<div>
+  <span class="aside">Name</span>
+  <input id="name" type="text" placeholder="My name is..." {{#configured}}value="{{name}}" disabled="disabled"{{/configured}} />
+
+  <span class="aside">Code</span>
+  <input id="code" type="text" {{#configured}}value="{{code}}" disabled="disabled"{{/configured}} />
+</div>
+
+<div>
+  <span class="aside">App Theme</span>
+  <select id="theme">
+    <option value="light">Light (default)</option>
+    <option value="dark">Dark</option>
+  </select>
+</div>
+
+{{^configured}}
+<div class="configure-controls">
+  <a id="create" class="btn btn-secondary dont-route">Create</a>
+  <a id="login" class="btn btn-secondary dont-route">Login</a>
+</div>
+{{/configured}}
