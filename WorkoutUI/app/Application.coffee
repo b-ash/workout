@@ -1,4 +1,4 @@
-User = require 'models/users/User'
+User = require 'models/User'
 Utils = require 'lib/Utils'
 
 
