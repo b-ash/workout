@@ -5,7 +5,8 @@ USE Workout;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT KEY,
   `name` VARCHAR(64) NOT NULL,
-  `secret` VARCHAR(255) NOT NULL
+  `code` VARCHAR(255) NOT NULL,
+  UNIQUE (`name`)
 );
 
 CREATE TABLE IF NOT EXISTS `routine` (

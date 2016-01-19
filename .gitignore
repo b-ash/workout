@@ -1,6 +1,4 @@
-node_modules/
-npm-debug.log
 .DS_Store
-ignore*
-*.map
+node_modules/
+WorkoutUI/npm-debug.log
 WorkoutUI/public/

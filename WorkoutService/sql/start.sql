@@ -1,16 +1,16 @@
 USE Workout;
 
-INSERT INTO `user` (`name`, `secret`) VALUES ('Bash', 'iworkout');
-INSERT INTO `user` (`name`, `secret`) VALUES ('Chris', 'thebox');
-INSERT INTO `user` (`name`, `secret`) VALUES ('DJ', 'babygirl');
+INSERT INTO `user` (`name`, `code`) VALUES ('Bash', 'iworkout');
+INSERT INTO `user` (`name`, `code`) VALUES ('Chris', 'thebox');
+INSERT INTO `user` (`name`, `code`) VALUES ('DJ', 'babygirl');
 
-INSERT INTO  `exerciseType` (`name`) VALUES ('Chest'); # 1
-INSERT INTO  `exerciseType` (`name`) VALUES ('Back'); # 2
-INSERT INTO  `exerciseType` (`name`) VALUES ('Biceps'); # 3
-INSERT INTO  `exerciseType` (`name`) VALUES ('Triceps'); # 4
-INSERT INTO  `exerciseType` (`name`) VALUES ('Forearms'); # 5
-INSERT INTO  `exerciseType` (`name`) VALUES ('Shoulders'); # 6
-INSERT INTO  `exerciseType` (`name`) VALUES ('Legs'); # 7
+INSERT INTO  `exerciseType` (`name`) VALUES ('Chest');
+INSERT INTO  `exerciseType` (`name`) VALUES ('Back');
+INSERT INTO  `exerciseType` (`name`) VALUES ('Biceps');
+INSERT INTO  `exerciseType` (`name`) VALUES ('Triceps');
+INSERT INTO  `exerciseType` (`name`) VALUES ('Forearms');
+INSERT INTO  `exerciseType` (`name`) VALUES ('Shoulders');
+INSERT INTO  `exerciseType` (`name`) VALUES ('Legs');
 
 # Pushups
 INSERT INTO `exercise` (`name`, `type`) VALUES ('Standard Push-ups', 1);
