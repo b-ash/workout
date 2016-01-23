@@ -1,3 +1,23 @@
 <header>
   <h4>Create Exercise</h4>
 </header>
+
+<form action="?">
+  <label>
+    Name
+    <input type="text" name="name" />
+  </label>
+
+  <label>
+    Type
+    <select name="type">
+      {{#each types}}
+      <option name="{{name}}" value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select>
+  </label>
+
+  <label>
+    Description
+    <input type="text" name="description" />
+  </label>

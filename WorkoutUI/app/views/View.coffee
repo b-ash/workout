@@ -14,7 +14,12 @@ module.exports = class View extends Backbone.View
   getPartialsRenderData: ->
     {}
 
-  render: =>
+  render: (callback) =>
+    @_render()
+    callback?(@)
+    @
+
+  _render: =>
     @$el.html @template @getRenderData(), {partials: @getPartialsRenderData()}
     @afterRender()
     @

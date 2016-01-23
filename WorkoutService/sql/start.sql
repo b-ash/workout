@@ -11,6 +11,7 @@ INSERT INTO  `exerciseType` (`name`) VALUES ('Triceps');
 INSERT INTO  `exerciseType` (`name`) VALUES ('Forearms');
 INSERT INTO  `exerciseType` (`name`) VALUES ('Shoulders');
 INSERT INTO  `exerciseType` (`name`) VALUES ('Legs');
+INSERT INTO  `exerciseType` (`name`) VALUES ('Cardio');
 
 # Pushups
 INSERT INTO `exercise` (`name`, `type`) VALUES ('Standard Push-ups', 1);

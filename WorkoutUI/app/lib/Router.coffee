@@ -76,7 +76,8 @@ class Router extends Backbone.Router
 
   setCurrentView: (view) =>
     @currentView = view
-    $('#main_page').html view.render().$el
+    view.render ->
+      $('#main_page').html view.$el
 
 
 module.exports = Router
