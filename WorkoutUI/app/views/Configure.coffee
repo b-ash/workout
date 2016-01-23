@@ -4,6 +4,10 @@ User = require 'models/User'
 Utils = require 'lib/Utils'
 $ = jQuery
 
+REMOTE_ERROR = "The app code is incorrect."
+VALIDATE_ERROR = "Whoa there cowpoke, fill in the blanks."
+INVALID_LOGIN_ERROR = "The user and code combination is incorrect."
+API_ERROR = "There was an error. Try saving again."
 
 class ConfigureView extends View
   tagName: 'div'
@@ -20,6 +24,8 @@ class ConfigureView extends View
     @user.toJSON()
 
   afterRender: =>
+    @$errorMsg = @$('#error_msg')
+
     theme = @user.get('theme')
     if theme
       @$("#theme option[value='#{theme}']").attr('selected', 'selected')
@@ -31,7 +37,7 @@ class ConfigureView extends View
       @user.save()
 
   isValid: =>
-    @$('#name').val().length && @$('#code').val().length
+    @$('#name').val().length && @$('#user_code').val().length && @$('#app_code').val().length
 
   create: =>
     @configure(false)
@@ -41,34 +47,46 @@ class ConfigureView extends View
 
   configure: (existingUser) =>
     unless @isValid()
-      return @onError()
+      return @onValidationError()
 
     config =
       name: @$('#name').val()
-      code: @$('#code').val()
+      userCode: @$('#user_code').val()
+      appCode: @$('#app_code').val()
       theme: @$('#theme').val()
       configured: true
 
-    if existingUser
-      promise = @user.verifyLogin(config.name, config.code)
+    interactive = @user.verifyRemote(config.appCode)
+    interactive.fail(@onRemoteError)
+    interactive.then(=>
+      if existingUser
+        promise = @user.verifyLogin(config.name, config.userCode,).fail(@onLoginError)
+      else
+        promise = @user.createUser(config.name, config.userCode)
+
+      promise.done(=>
+        @user.save(config)
+        app.router.navigate('', true)
+      )
+    )
+
+  onRemoteError: (xhr) =>
+    if xhr.status is 401
+      @$errorMsg.text(REMOTE_ERROR).show()
     else
-      promise = @createUser(config.name, config.code)
-
-    promise.done(=>
-      @user.save(config)
-      app.router.navigate('', true)
-    ).fail(@onLoginError)
-
-  createUser: (name, code) ->
-    $.ajax '/api/users',
-      type: 'POST'
-      data: {name, code}
+      @onApiError()
 
   onValidationError: =>
-    @$('#validation_error_msg').show()
+    @$errorMsg.text(VALIDATION_ERROR).show()
 
-  onLoginError: =>
-    @$('#login_error_msg').show()
+  onLoginError: (xhr) =>
+    if xhr.status is 401
+      @$errorMsg.text(INVALID_LOGIN_ERROR).show()
+    else
+      @onApiError()
+
+  onApiError: =>
+    @$errorMsg.text(API_ERROR).show()
 
 
 module.exports = ConfigureView

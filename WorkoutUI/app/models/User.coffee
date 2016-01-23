@@ -14,16 +14,33 @@ class User extends LocalStorageModel
     @get('configured') and
     @has('name') and
     @get('name').length and
-    @has('code') and
-    @get('code').length
+    @has('userCode') and
+    @get('userCode').length and
+    @has('appCode') and
+    @get('appCode').length
+
+  createUser: (name, code) ->
+    $.ajax '/api/users',
+      type: 'POST'
+      data: {name, code}
 
   verifyLogin: (name, code) ->
     name ?= @get('name')
-    code ?= @get('code')
+    code ?= @get('userCode')
 
     $.ajax('/api/users/verify',
       type: 'POST'
       data: {name, code}
+    ).fail(=>
+      @set('configured', false)
+    )
+
+  verifyRemote: (remote) ->
+    remote ?= @get('appCode')
+
+    $.ajax('/api/admin/interactive'
+      type: 'POST'
+      data: {remote}
     ).fail(=>
       @set('configured', false)
     )

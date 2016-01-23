@@ -3,7 +3,9 @@ checkKey = (name, key) ->
 
 register = (server, basePath) ->
   server.post "#{basePath}/admin/interactive", (req, res) ->
-    req.json
-      remote: checkKey('WORKOUT_REMOTE', req.body.remote)
+    if checkKey('WORKOUT_REMOTE', req.body.remote)
+      res.send(200)
+    else
+      res.send(401)
 
 module.exports = {register}
