@@ -25,4 +25,8 @@ register = (server, basePath, dbRunner) ->
     dao.exercises req.params.id, (data) ->
       res.json(Parsers.routineExercises(data))
 
+  server.get "#{path}/users/:user/history", (req, res) ->
+    dao.history req.params.user, (data) ->
+      res.json(data)
+
 module.exports = {register}

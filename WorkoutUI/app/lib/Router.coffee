@@ -3,6 +3,9 @@ views =
   nav: require('views/Nav')
   footer: require('views/Footer')
   index: require('views/Index')
+  chooseRoutine: require('views/ChooseRoutine')
+  createRoutine: require('views/CreateRoutine')
+  createExercise: require('views/CreateExercise')
   about: require('views/About')
   clear: require('views/Clear')
   configure: require('views/Configure')
@@ -12,6 +15,9 @@ class Router extends Backbone.Router
   currentView: null
   routes:
     '': 'index'
+    'workout': 'chooseRoutine'
+    'create/routines': 'createRoutine'
+    'create/exercises': 'createExercise'
     'about': 'about'
     'configure': 'configure'
     'clear': 'clear'
@@ -22,6 +28,15 @@ class Router extends Backbone.Router
 
   index: =>
     @setupView('index', 'index')
+
+  chooseRoutine: =>
+    @setupView('workout', 'chooseRoutine')
+
+  createRoutine: =>
+    @setupView('create', 'createRoutine')
+
+  createExercise: =>
+    @setupView('create', 'createExercise')
 
   about: =>
     @setupView('settings', 'about')

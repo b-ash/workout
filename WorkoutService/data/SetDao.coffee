@@ -14,7 +14,7 @@ class SetDao extends Dao
     '`dateInt`'
   ]
 
-  list: (userId, routineId, callback) =>
+  list: (user, routineId, callback) =>
     sql = """
       SELECT u.name AS user,
              r.name AS routine,
@@ -26,7 +26,7 @@ class SetDao extends Dao
              s.notes AS notes,
              s.dateInt as dateInt
       FROM `set` s, `exercise` e, `exerciseType` et, `routine` r, `user` u
-      WHERE s.userId = ? AND
+      WHERE s.userId = (SELECT `id` FROM `user` WHERE `name` = ?) AND
             s.userId = u.id AND
             s.routineId = ? AND
             s.routineId = r.id AND
@@ -35,7 +35,7 @@ class SetDao extends Dao
       ORDER BY `dateInt` DESC, `position` ASC
     """
 
-    @runner(sql, [userId, routineId], callback)
+    @runner(sql, [user, routineId], callback)
 
 
 module.exports = SetDao

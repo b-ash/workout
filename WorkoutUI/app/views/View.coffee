@@ -27,24 +27,17 @@ module.exports = class View extends Backbone.View
     @unbind()
     @onClose?()
 
+  skipLink: (event) ->
+    if $(event.target).hasClass('dont-route')
+      event.preventDefault()
+
   routeEvent: (event) =>
-    $link = $ event.target
-    url = $link.attr('href')
-
-    if $link.attr('target') is '_blank' or
-       typeof url is 'undefined' or
-       url.substr(0, 4) is 'http' or
-       url is '' or
-       url is 'javascript:void(0)'
-      return true
-
+    $link = $(event.target)
     event.preventDefault()
-
     if $link.hasClass('dont-route')
       return true
     else
-      @routeLink url
+      @routeLink $link.attr('href')
 
   routeLink: (url) =>
     app.router.navigate url, {trigger: true}
-    @trigger('routed')

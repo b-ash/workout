@@ -1,37 +1,12 @@
 @import nib
+@import constants
 
-page-width()
-    max-width: 420px
-    margin-left: auto
-    margin-right: auto
-    padding-left: 10px
-    padding-right: 10px
+.subheader
+    margin-bottom: 10px
 
-html
-    width: 100%
-    height: 450px
-
-.main-page
-    page-width()
-    margin-top: 55px
-
-.navbar
-    .nav
-        left: -9px
-
-        li a
-            padding: 10px
-
-    .container
-        page-width()
-
-        .dropdown-menu
-            min-width: 80px
-
-.footer
-    page-width()
+#history
     text-align: center
-    padding: 15px 0
+
 
 .btn-decrement
     position: absolute
@@ -44,71 +19,6 @@ html
 
     span
         margin: 7px 0 0 30px
-
-.list
-    .list-item
-        margin-bottom: 10px
-
-        .btn
-            width: 100%
-            padding: 5px 0
-
-            &:visited
-                color: #000
-
-            &.btn-third
-                display: inline-block
-                width: 30%
-
-                &.with-right-margin
-                    margin-right: 4%
-
-        .percentage-bar
-            border-radius 4px
-            border: 1px solid #AAA
-            width: 100%
-            height: 30px
-            background-color: #DDD
-
-            -moz-user-select: none
-            -khtml-user-select: none
-            -webkit-user-select: none
-            -o-user-select: none
-
-            .percentage-complete
-                border-radius 4px
-                width: 0
-                max-width: 100%
-                height: 30px
-
-                transition: width 0.4s
-
-                &.starches, &.grains
-                    background: linear-gradient(top, darken(#963, 15%), lighten(#964, 30%))
-                &.legumes
-                    background: linear-gradient(top, #330, lighten(#330, 20%))
-                &.veggies
-                    background: linear-gradient(top, darken(#2E873B, 15%), lighten(#2E873B, 30%))
-                &.fruits
-                    background: linear-gradient(top, darken(#C69, 15%), lighten(#C69, 40%))
-                &.proteins
-                    background: linear-gradient(top, #633, lighten(#633, 30%))
-                &.fats
-                    background: linear-gradient(top, darken(#C66, 15%), lighten(#C66, 30%))
-                &.shake, &.dairy
-                    background: linear-gradient(top, darken(#39F, 15%), lighten(#39F, 30%))
-                &.condiments
-                    background: linear-gradient(top, darken(#FC6, 35%), lighten(#FC6, 10%))
-
-                .percentage-text
-                    left: 5px
-                    line-height: 30px
-                    color: #FFF
-                    display: inline
-                    width: 200px
-
-                    &.exceeding
-                        color: #C00
 
 .macro-replacement
     margin-bottom: 10px

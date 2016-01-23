@@ -6,8 +6,8 @@ register = (server, basePath, dbRunner) ->
   dao = new SetDao(dbRunner)
   path = "#{basePath}/sets"
 
-  server.get "#{path}/users/:userId/routines/:routineId", (req, res) ->
-    dao.list req.params.userId, req.params.routineId, (data) ->
+  server.get "#{path}/users/:user/routines/:routineId", (req, res) ->
+    dao.list req.params.user, req.params.routineId, (data) ->
       res.json(Parsers.setsByDay(data))
 
   server.post path, (req, res) ->

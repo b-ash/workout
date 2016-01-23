@@ -17,6 +17,18 @@ class RoutineDao extends Dao
         }
       callback(routine)
 
+  history: (user, callback) ->
+    @runner """
+      SELECT r.name AS name,
+             r.description AS description,
+             s.dateInt AS dateInt
+      FROM `routine` r, `set` s
+      WHERE r.id = s.routineId AND
+            s.userId = (SELECT `id` FROM `user` WHERE `name` = ?)
+      GROUP BY 3
+      ORDER BY 3 DESC
+    """, [user], callback
+
   exercises: (id, callback) ->
     @runner """
       SELECT r.id AS routineId,
