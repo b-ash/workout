@@ -16,4 +16,8 @@ class ExerciseDao extends Dao
       ORDER BY e.type ASC, e.name ASC
     """, params, callback
 
+  listTypes: (callback) =>
+    @runner 'SELECT `id`, `name` from `exerciseType`', [], callback
+
+
 module.exports = ExerciseDao
