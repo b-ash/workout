@@ -1,6 +1,7 @@
 app = require 'Application'
 views =
   nav: require('views/Nav')
+  footer: require('views/Footer')
   index: require('views/Index')
   about: require('views/About')
   clear: require('views/Clear')
@@ -39,6 +40,7 @@ class Router extends Backbone.Router
       return
 
     @navSetup(navItem)
+    @footerSetup()
     view = app.views[claxx]
     if view isnt @currentView
       @closeCurrentView()
@@ -46,10 +48,13 @@ class Router extends Backbone.Router
       @setCurrentView view
 
   navSetup: (activeView) =>
-    if not app.views.nav?
-      app.views.nav = new views.nav()
+    app.views.nav ?= new views.nav
     app.views.nav.activeView = activeView
     app.views.nav.render()
+
+  footerSetup: =>
+    app.views.footer ?= new views.footer {user: app.user}
+    app.views.footer.render()
 
   closeCurrentView: =>
     @currentView?.close()
