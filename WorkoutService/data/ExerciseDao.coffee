@@ -2,7 +2,7 @@ Dao = require('./Dao')
 
 class ExerciseDao extends Dao
   table: '`exercise`'
-  fields: ['`id`', '`name`', '`description`', '`created`', '`type`']
+  fields: ['id', 'name', 'description', 'created', 'type']
 
   list: (callback, options={}) =>
     params = []
