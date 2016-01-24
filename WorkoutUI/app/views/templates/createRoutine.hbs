@@ -1,3 +1,39 @@
 <header>
   <h4>Create Routine</h4>
 </header>
+
+<div id="error_msg" class="alert error" style="display: none;"></div>
+
+<table>
+  <thead>
+    <th></th>
+    <th></th>
+  <tbody>
+    <tr>
+      <td>
+        <label>Name</label>
+      </td>
+      <td>
+        <input type="text" name="name" />
+      </td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>
+        <input type="text" name="description" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="exercises">
+  <b>Available exercises</b>
+  <ul class="btn-list"></ul>
+</div>
+
+<div id="selected_exercises">
+  <b>Selected exercises</b>
+  <ul></ul>
+</div>
+
+<button class="btn btn-primary">Create</button>

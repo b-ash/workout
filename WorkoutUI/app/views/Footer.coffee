@@ -8,7 +8,10 @@ class Footer extends View
   initialize: ({@user}) ->
 
   getRenderData: ->
-    name: @user.get('name').toLowerCase().charAt(0).toUpperCase() + @user.get('name').slice(1)
+    if @user.isConfigured()
+      name: @user.get('name').toLowerCase().charAt(0).toUpperCase() + @user.get('name').slice(1)
+    else
+      {}
 
 
 module.exports = Footer

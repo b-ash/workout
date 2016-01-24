@@ -1,6 +1,6 @@
 View = require './View'
 Routines = require '../models/Routines'
-RoutineSelectItemView = require './RoutineSelectItem'
+SelectSlideItemView = require './SelectSlideItem'
 
 
 class ChooseRoutineView extends View
@@ -21,7 +21,10 @@ class ChooseRoutineView extends View
 
   renderRoutines: =>
     @routines.each (model) =>
-      view = new RoutineSelectItemView({model})
+      view = new SelectSlideItemView({
+          model: model
+          template: require('./templates/routineSelectItem')
+        })
         .on('select', @routineSelected)
         .render()
       @$routines.append(view.el)

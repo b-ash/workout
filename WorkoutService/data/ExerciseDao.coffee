@@ -10,7 +10,7 @@ class ExerciseDao extends Dao
       params.push options.type
 
     @runner """
-      SELECT e.id, e.name, e.description, et.name AS type
+      SELECT e.id, e.name, e.description, et.name AS type, et.id AS typeId
       FROM `exercise` e, `exerciseType` et
       WHERE e.type = et.id #{if options.type then 'AND et.name = ?' else ''}
       ORDER BY e.type ASC, e.name ASC

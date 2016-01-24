@@ -2,7 +2,7 @@ Dao = require('./Dao')
 
 class RoutineDao extends Dao
   table: '`routine`'
-  fields: ['`id`', '`name`', '`description`', '`created`']
+  fields: ['id', 'name', 'description', 'created']
 
   list: (callback) =>
     super(callback, {orderBy: "`name` ASC"})

@@ -1,0 +1,14 @@
+<span class="toggle btn btn-large btn-secondary">{{type}}</span>
+<div class="hidden">
+  <ul class="link-list">
+    {{#each exercises}}
+    <li>
+      <div class="select exercise-select">
+        <b>{{name}}</b>
+        <br />
+        <i>{{#if description}}{{description}}{{else}}No description available{{/if}}</i>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>
